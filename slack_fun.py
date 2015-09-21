@@ -43,7 +43,7 @@ def perform_fun(username, channel_id):
             print >> sys.stderr, msg
             time.sleep(wait)
     except KeyboardInterrupt:
-        pass
+        API.chat.post_message(channel_id, 'The fun is over.', as_user=True)
 
 
 @click.command()
