@@ -6,10 +6,12 @@ import os
 import time
 import random
 
+
 def touch(filename):
     """Touch a file."""
     with open(filename, 'a'):
         os.utime(filename, None)
+
 
 def remove(filename):
     """Delete with no error if file doesn't exist."""
@@ -24,6 +26,7 @@ delay = 7
 
 # The fun never ends.
 FILENAME_LIST = []
+
 
 def fun():
     print "You're about to have some fun with %s" % template
