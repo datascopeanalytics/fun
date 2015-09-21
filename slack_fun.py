@@ -34,13 +34,14 @@ def perform_fun(username, channel_id):
     fun_count = 0
     try:
         while True:
-            API.chat.post_message(channel_id, 'Hi %s' % username, as_user=True)
+            fun_count += 1
+            msg = 'Hi %s! This is %ix fun!' % (username, fun_count)
+            API.chat.post_message(channel_id, msg, as_user=True)
             wait = random.randint(1, 10)
             msg = 'You funned %s %i times, now waiting %i seconds' % \
                 (username, fun_count, wait)
             print >> sys.stderr, msg
             time.sleep(wait)
-            fun_count += 1
     except KeyboardInterrupt:
         pass
 
